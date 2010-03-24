@@ -184,6 +184,9 @@ table.boards a.board, h3.comments { background: url(../../../images/comment.png)
 
 td.center {text-align:center;}
 
+/* assinged to me, created by me */
+tr.assigned-to-me td.assigned_to, tr.created-by-me td.author { font-weight: bold; font-size: 11px; }
+
 /* overdue */ 
 tr.odd.overdue { background: #ffd8b2; }
 tr.even.overdue { background: #ffe5cc; }
