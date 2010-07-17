@@ -1,9 +1,9 @@
-= Redmine用テーマ "farend basic" (2010-03-22)
+= Redmine用テーマ "farend basic"
 
 == このテーマについて
 
 Redmine用のカスタムテーマです。日本語環境で見やすい画面を実現することを
-目的に、Redmine 0.9.3付属のデフォルトテーマを元に作成したものです。
+目的に、Redmine付属のデフォルトテーマを元に作成したものです。
 
 デフォルトテーマに対する変更は必要最小限としていますので、見た目が大きく
 変わることはありません。既にRedmineを運用中の組織でも利用者を混乱させずに
@@ -30,11 +30,11 @@ farend basicテーマの主な特徴は以下の通りです。
 
 以下の環境で検証を行いました。
 
-* Redmine 0.9.3
+* Redmine 1.0
 * Windows 7 + Internet Explorer 8
 * Windows 7 + Firefox 3.6
-* MacOS X 10.6.2 + Firefox 3.6
-* MacOS X 10.6.2 + Safari 4.0.4
+* MacOS X 10.6.4 + Firefox 3.6
+* MacOS X 10.6.4 + Safari 4.0.4
 
 Windows XPをご利用の場合、メイリオフォントを下記URLから取得してインストールすることをお勧めします。
 
@@ -61,6 +61,11 @@ Redmineの管理画面で新しいテーマを利用する設定を行います�
 
 
 == 変更点の一覧
+
+=== 2010-07-18 ===
+
+* Redmine 1.0に対応するために、Redmine 0.9とRedmine 1.0のCSSの差分を取り込み
+  ました。
 
 === 2010-03-24 ===
 
