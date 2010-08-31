@@ -166,7 +166,7 @@ tr.message td.last_message { font-size: 80%; white-space: nowrap; }
 tr.message.locked td.subject { background: url(../../../images/locked.png) no-repeat 0 1px; }
 tr.message.sticky td.subject { background: url(../../../images/bullet_go.png) no-repeat 0 1px; font-weight: bold; }
 
-tr.version.closed, tr.version.closed a { color: #999; }
+tr.version.closed, tr.version.closed a { color: #666; }
 tr.version td.name { padding-left: 20px; }
 tr.version.shared td.name { background: url(../../../images/link.png) no-repeat 0% 70%; }
 tr.version td.date, tr.version td.status, tr.version td.sharing { text-align: center; }
@@ -306,7 +306,7 @@ p.subtitle { font-size: 0.9em; margin: -6px 0 12px 0; font-style: italic; }
 p.footnote { font-size: 0.9em; margin-top: 0px; margin-bottom: 0px; }
 
 div.issue div.subject div div { padding-left: 16px; }
-div.issue div.subject p {margin: 0; margin-bottom: 0.1em; font-size: 90%; color: #999;}
+div.issue div.subject p {margin: 0; margin-bottom: 0.1em; font-size: 90%; color: #666;}
 div.issue div.subject>div>p { margin-top: 0.5em; }
 div.issue div.subject h3 {margin: 0; margin-bottom: 0.1em;}
 
