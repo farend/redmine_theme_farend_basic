@@ -1,3 +1,4 @@
+html {overflow-y:scroll;}
 body { font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif; font-size: 12px; color:#222; margin: 0; padding: 0; min-width: 900px; }
 
 h1 {margin:0; padding:0; font-size: 22px;}
@@ -112,7 +113,7 @@ table.list caption { text-align: left; padding: 0.5em 0.5em 0.5em 0; }
 
 tr.project td.name a { white-space:nowrap; }
 
-tr.project.idnt td.name a {background: url(../../../images/bullet_arrow_right.png) no-repeat 0 50%; padding-left: 16px;}
+tr.project.idnt td.name span {background: url(../../../images/bullet_arrow_right.png) no-repeat 0 50%; padding-left: 16px;}
 tr.project.idnt-1 td.name {padding-left: 0.5em;}
 tr.project.idnt-2 td.name {padding-left: 2em;}
 tr.project.idnt-3 td.name {padding-left: 3.5em;}
@@ -176,6 +177,8 @@ tr.user td.email { width:18%; }
 tr.user td { white-space: nowrap; }
 tr.user.locked, tr.user.registered { color: #aaa; }
 tr.user.locked a, tr.user.registered a { color: #aaa; }
+
+tr.wiki-page-version td.updated_on, tr.wiki-page-version td.author {text-align:center;}
 
 tr.time-entry { text-align: center; white-space: nowrap; }
 tr.time-entry td.subject, tr.time-entry td.comments { text-align: left; white-space: normal; }
@@ -457,6 +460,7 @@ input#time_entry_comments { width: 90%;}
 .tabular.settings textarea { width: 99%; }
 
 fieldset.settings label { display: block; }
+.parent { padding-left: 20px; }
 
 .required {color: #bb0000;}
 .summary {font-style: italic;}
@@ -701,6 +705,7 @@ div.autocomplete ul li span.informal {
 }
 
 #parent_issue_candidates ul li {width: 500px;}
+#related_issue_candidates ul li {width: 500px;}
 
 /***** Diff *****/
 .diff_out { background: #fcc; }
@@ -757,9 +762,10 @@ div.wiki ul.toc {
 
 div.wiki ul.toc.right { float: right; margin-left: 12px; margin-right: 0; width: auto; }
 div.wiki ul.toc.left  { float: left; margin-right: 12px; margin-left: 0; width: auto; }
-div.wiki ul.toc li { list-style-type:none;}
-div.wiki ul.toc li.heading2 { margin-left: 6px; }
-div.wiki ul.toc li.heading3 { margin-left: 12px; font-size: 0.8em; }
+div.wiki ul.toc ul { margin: 0; padding: 0; }
+div.wiki ul.toc li { list-style-type:none; margin: 0;}
+div.wiki ul.toc li li { margin-left: 1.5em; }
+div.wiki ul.toc li li li { font-size: 0.8em; }
 
 div.wiki ul.toc a {
     font-size: 0.9em;
@@ -819,6 +825,8 @@ background-image:url('../../../images/close_hl.png');
   overflow: hidden;
 }
 
+.gantt_subjects { font-size: 0.8em; }
+
 .task {
   position: absolute;
   height:8px;
@@ -830,16 +838,29 @@ background-image:url('../../../images/close_hl.png');
   white-space:nowrap;
 }
 
+.task.label {width:100%;}
+.task.label.project, .task.label.version { font-weight: bold; }
+
 .task_late { background:#f66 url(../../../images/task_late.png); border: 1px solid #f66; }
-.task_done { background:#66f url(../../../images/task_done.png); border: 1px solid #66f; }  
+.task_done { background:#00c600 url(../../../images/task_done.png); border: 1px solid #00c600; }  
 .task_todo { background:#aaa url(../../../images/task_todo.png); border: 1px solid #aaa; }
 
-.task_todo.parent { background: #888; border: 1px solid #888; height: 6px;}
+.task_todo.parent { background: #888; border: 1px solid #888; height: 3px;}
 .task_late.parent, .task_done.parent { height: 3px;}
-.task_todo.parent .left  { position: absolute; background: url(../../../images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-left: -5px; left: 0px; top: -1px;}
-.task_todo.parent .right { position: absolute; background: url(../../../images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-right: -5px; right: 0px; top: -1px;}
+.task.parent.marker.starting  { position: absolute; background: url(../../../images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-left: -4px; left: 0px; top: -1px;}
+.task.parent.marker.ending { position: absolute; background: url(../../../images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-left: -4px; right: 0px; top: -1px;}
+.version.task_late { background:#f66 url(../../../images/milestone_late.png); border: 1px solid #f66; height: 2px; margin-top: 3px;}
+.version.task_done { background:#00c600 url(../../../images/milestone_done.png); border: 1px solid #00c600; height: 2px; margin-top: 3px;}
+.version.task_todo { background:#fff url(../../../images/milestone_todo.png); border: 1px solid #fff; height: 2px; margin-top: 3px;}
+.version.marker { background-image:url(../../../images/version_marker.png); background-repeat: no-repeat; border: 0; margin-left: -4px; margin-top: 1px; }
 
-.milestone { background-image:url(../../../images/milestone.png); background-repeat: no-repeat; border: 0; }
+.project.task_late { background:#f66 url(../../../images/milestone_late.png); border: 1px solid #f66; height: 2px; margin-top: 3px;}
+.project.task_done { background:#00c600 url(../../../images/milestone_done.png); border: 1px solid #00c600; height: 2px; margin-top: 3px;}
+.project.task_todo { background:#fff url(../../../images/milestone_todo.png); border: 1px solid #fff; height: 2px; margin-top: 3px;}
+.project.marker { background-image:url(../../../images/project_marker.png); background-repeat: no-repeat; border: 0; margin-left: -4px; margin-top: 1px; }
+
+.version-behind-schedule a, .issue-behind-schedule a {color: #f66914;}
+.version-overdue a, .issue-overdue a, .project-overdue a {color: #f00;}
 
 /***** Icons *****/
 .icon {
@@ -883,6 +904,9 @@ padding-bottom: 3px;
 .icon-comment  { background-image: url(../../../images/comment.png); }
 .icon-summary  { background-image: url(../../../images/lightning.png); }
 .icon-server-authentication { background-image: url(../../../images/server_key.png); }
+.icon-issue { background-image: url(../../../images/ticket.png); }
+.icon-zoom-in { background-image: url(../../../images/zoom_in.png); }
+.icon-zoom-out { background-image: url(../../../images/zoom_out.png); }
 
 .icon-file { background-image: url(../../../images/files/default.png); }
 .icon-file.text-plain { background-image: url(../../../images/files/text.png); }
@@ -939,6 +963,12 @@ td.username img.gravatar {
 #activity dt img.gravatar {
 	float: left;
 	margin: 0 1em 1em 0;
+}
+
+/* Used on 12px Gravatar img tags without the icon background */
+.icon-gravatar {
+  float: left;
+  margin-right: 4px;
 }
 
 #activity dt,
