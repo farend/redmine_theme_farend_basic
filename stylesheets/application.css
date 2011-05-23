@@ -106,7 +106,8 @@ table.list { border: 1px solid #e4e4e4;  border-collapse: collapse; width: 100%;
 table.list th {  background-color:#EEEEEE; padding: 4px 2px; white-space:nowrap; }
 table.list td { vertical-align: top; }
 table.list td.id { width: 2%; text-align: center;}
-table.list td.checkbox { width: 15px; padding: 0px;}
+table.list td.checkbox { width: 15px; padding: 2px 0 0 0; }
+table.list td.checkbox input {padding:0px;}
 table.list td.buttons { width: 15%; white-space:nowrap; text-align: right; }
 table.list td.buttons a { padding-right: 0.6em; }
 table.list caption { text-align: left; padding: 0.5em 0.5em 0.5em 0; }
@@ -125,7 +126,7 @@ tr.project.idnt-8 td.name {padding-left: 11em;}
 tr.project.idnt-9 td.name {padding-left: 12.5em;}
 
 tr.issue { text-align: center; white-space: nowrap; }
-tr.issue td.subject, tr.issue td.category, td.assigned_to { white-space: normal; }
+tr.issue td.subject, tr.issue td.category, td.assigned_to, tr.issue td.string, tr.issue td.text { white-space: normal; }
 tr.issue td.subject { text-align: left; }
 tr.issue td.done_ratio table.progress { margin-left:auto; margin-right: auto;}
 
@@ -143,10 +144,12 @@ tr.issue.idnt-9 td.subject {padding-left: 12.5em;}
 tr.entry { border: 1px solid #f8f8f8; }
 tr.entry td { white-space: nowrap; }
 tr.entry td.filename { width: 30%; }
+tr.entry td.filename_no_report { width: 70%; }
 tr.entry td.size { text-align: right; font-size: 90%; }
 tr.entry td.revision, tr.entry td.author { text-align: center; }
 tr.entry td.age { text-align: right; }
 tr.entry.file td.filename a { margin-left: 16px; }
+tr.entry.file td.filename_no_report a { margin-left: 16px; }
 
 tr span.expander {background-image: url(../../../images/bullet_toggle_plus.png); padding-left: 8px; margin-left: 0; cursor: pointer;}
 tr.open span.expander {background-image: url(../../../images/bullet_toggle_minus.png);}
@@ -170,7 +173,7 @@ tr.message.sticky td.subject { background: url(../../../images/bullet_go.png) no
 tr.version.closed, tr.version.closed a { color: #666; }
 tr.version td.name { padding-left: 20px; }
 tr.version.shared td.name { background: url(../../../images/link.png) no-repeat 0% 70%; }
-tr.version td.date, tr.version td.status, tr.version td.sharing { text-align: center; }
+tr.version td.date, tr.version td.status, tr.version td.sharing { text-align: center; white-space:nowrap; }
 
 tr.user td { width:13%; }
 tr.user td.email { width:18%; }
@@ -193,6 +196,9 @@ table.plugins span.url { display: block; font-size: 0.9em; }
 
 table.list tbody tr.group td { padding: 0.8em 0 0.5em 0.3em; font-weight: bold; border-bottom: 1px solid #ccc; }
 table.list tbody tr.group span.count { color: #aaa; font-size: 80%; }
+tr.group a.toggle-all { color: #aaa; font-size: 80%; font-weight: normal; display:none;}
+tr.group:hover a.toggle-all { display:inline;}
+a.toggle-all:hover {text-decoration:none;}
 
 table.list tbody tr:hover { background-color:#ffffdd; }
 table.list tbody tr.group:hover { background-color:inherit; }
@@ -312,9 +318,11 @@ div.issue div.subject div div { padding-left: 16px; }
 div.issue div.subject p {margin: 0; margin-bottom: 0.1em; font-size: 90%; color: #666;}
 div.issue div.subject>div>p { margin-top: 0.5em; }
 div.issue div.subject h3 {margin: 0; margin-bottom: 0.1em;}
+div.issue span.private { position:relative; bottom: 2px; text-transform: uppercase; background: #d22; color: #fff; font-weight:bold; padding: 0px 2px 0px 2px; font-size: 60%; margin-right: 2px; border-radius: 2px; -moz-border-radius: 2px;}
 
-#issue_tree table.issues { border: 0; }
-#issue_tree td.checkbox {display:none;}
+#issue_tree table.issues, #relations table.issues { border: 0; }
+#issue_tree td.checkbox, #relations td.checkbox {display:none;}
+#relations td.buttons {padding:0;}
 
 fieldset.collapsible { border-width: 1px 0 0 0; font-size: 0.9em; }
 fieldset.collapsible legend { padding-left: 16px; background: url(../../../images/arrow_expanded.png) no-repeat 0% 40%; cursor:pointer; }
@@ -368,6 +376,7 @@ div#roadmap .related-issues td.checkbox { display: none; }
 div#roadmap .wiki h1:first-child { display: none; }
 div#roadmap .wiki h1 { font-size: 120%; }
 div#roadmap .wiki h2 { font-size: 110%; }
+body.controller-versions.action-show div#roadmap .related-issues {width:auto;}
 
 div#version-summary { float:right; width:380px; margin-left: 16px; margin-bottom: 16px; background-color: #fff; }
 div#version-summary fieldset { margin-bottom: 1em; }
@@ -381,7 +390,9 @@ table#time-report .hours-dec { font-size: 0.9em; }
 
 form .attributes { margin-bottom: 8px; }
 form .attributes p { padding-top: 1px; padding-bottom: 2px; }
-form .attributes select { min-width: 50%; }
+form .attributes select { width: 60%; }
+input#issue_subject { width: 99%; }
+select#issue_done_ratio { width: 95px; }
 
 ul.projects { margin: 0; padding-left: 1em; }
 ul.projects.root { margin: 0;  padding: 0; }
@@ -402,9 +413,11 @@ ul.properties li span {font-style:italic;}
 .total-hours span.hours-int { font-size: 120%; }
 
 .autoscroll {overflow-x: auto; padding:1px; margin-bottom: 1.2em;}
-#user_firstname, #user_lastname, #user_mail, #my_account_form select { width: 90%; }
+#user_login, #user_firstname, #user_lastname, #user_mail, #my_account_form select, #user_form select { width: 90%; }
 
 #workflow_copy_form select { width: 200px; }
+
+textarea#custom_field_possible_values {width: 99%}
 
 .pagination {font-size: 90%}
 p.pagination {margin-top:8px;}
@@ -460,7 +473,7 @@ input#time_entry_comments { width: 90%;}
 .tabular.settings textarea { width: 99%; }
 
 fieldset.settings label { display: block; }
-.parent { padding-left: 20px; }
+fieldset#notified_events .parent { padding-left: 20px; }
 
 .required {color: #bb0000;}
 .summary {font-style: italic;}
@@ -709,7 +722,16 @@ div.autocomplete ul li span.informal {
 
 /***** Diff *****/
 .diff_out { background: #fcc; }
+.diff_out span { background: #faa; }
 .diff_in { background: #cfc; }
+.diff_in span { background: #afa; }
+
+.text-diff {
+padding: 1em;
+background-color:#f6f6f6;
+color:#505050;
+border: 1px solid #e4e4e4;
+}
 
 /***** Wiki *****/
 div.wiki table {
@@ -826,6 +848,7 @@ background-image:url('../../../images/close_hl.png');
 }
 
 .gantt_subjects { font-size: 0.8em; }
+.gantt_subjects div { line-height:16px;height:16px;overflow:hidden;white-space:nowrap;text-overflow: ellipsis; }
 
 .task {
   position: absolute;
@@ -834,7 +857,7 @@ background-image:url('../../../images/close_hl.png');
   color:#888;
   padding:0;
   margin:0;
-  line-height:0.8em;
+  line-height:16px;
   white-space:nowrap;
 }
 
@@ -883,7 +906,6 @@ padding-bottom: 3px;
 .icon-folder { background-image: url(../../../images/folder.png); }
 .open .icon-folder { background-image: url(../../../images/folder_open.png); }
 .icon-package { background-image: url(../../../images/package.png); }
-.icon-home { background-image: url(../../../images/home.png); }
 .icon-user { background-image: url(../../../images/user.png); }
 .icon-projects { background-image: url(../../../images/projects.png); }
 .icon-help { background-image: url(../../../images/help.png); }
@@ -956,8 +978,8 @@ h4 img.gravatar {
 }
 
 td.username img.gravatar {
-	float: left;
-	margin: 0 1em 0 0;
+	margin: 0 0.5em 0 0;
+	vertical-align: top;
 }
 
 #activity dt img.gravatar {
@@ -991,4 +1013,7 @@ h2 img { vertical-align:middle; }
   #content { width: 99%; margin: 0; padding: 0; border: 0; background: #fff; overflow: visible !important;}
 	#wiki_add_attachment { display:none; }
   .hide-when-print { display: none; }
+	.autoscroll {overflow-x: visible;}
+	table.list {margin-top:0.5em;}
+	table.list th, table.list td {border: 1px solid #aaa;}
 }
