@@ -26,15 +26,9 @@ farend basicテーマの主な特徴は以下の通りです。
   変更しました。
 
 
-== 動作環境
+== 利用環境
 
-以下の環境で検証を行いました。
-
-* Redmine 1.1.0
-* Windows 7 + Internet Explorer 8
-* Windows 7 + Firefox 3.6
-* MacOS X 10.6.6 + Firefox 3.6
-* MacOS X 10.6.6 + Safari 5.0.3
+Redmine 1.2.x でご利用になれます。
 
 Windows XPをご利用の場合、メイリオフォントを下記URLから取得してインストールすることをお勧めします。
 
@@ -57,6 +51,11 @@ Redmineの管理画面で新しいテーマを利用する設定を行います�
 
 
 == 変更点の一覧
+
+=== 2011-05-23 ===
+
+* Redmine 1.2に対応するために、Redmine 1.1とRedmine 1.2のCSSの差分を取り込み
+  ました。
 
 === 2011-01-11 ===
 
