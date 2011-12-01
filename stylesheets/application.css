@@ -579,6 +579,8 @@ div.flash.warning {
     color: #A6750C;
 }
 
+span.error {padding-left:20px; background:url(../../../images/exclamation.png) no-repeat 0 50%;}
+
 #errorExplanation ul { font-size: 0.9em;}
 #errorExplanation h2, #errorExplanation p { display: none; }
 
