@@ -124,3 +124,8 @@ div.wiki pre {
     white-space: pre-wrap;      /* CSS3 */
     word-wrap: break-word;      /* IE 5.5+ */
 }
+
+/***** My page layout *****/
+.mypage-box {
+  color:#222;
+}
