@@ -32,6 +32,8 @@ a, a:link, a:visited {color: #0c4d7f;}
 
 a.issue.closed, a.issue.closed:link, a.issue.closed:visited {color: #666;}
 
+a#toggle-completed-versions {color:#666;}
+
 /***** Tables *****/
 table.list th {padding: 4px 2px;}
 
@@ -90,6 +92,8 @@ input[type="text"] { font-family: "Osaka-Mono", "MS Gothic", sans-serif; font-si
 textarea.wiki-edit {font-family: "Osaka-Mono", "MS Gothic", sans-serif; letter-spacing: normal; line-height: 130%;}
 
 div.issue div.subject p {color: #666;}
+div.issue .next-prev-links {color:#666;}
+
 
 .buttons {font-size: 12px;}
 
