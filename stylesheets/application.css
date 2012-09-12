@@ -52,7 +52,7 @@ tr.odd.overdue td, tr.even.overdue td { border-color: #fcc; }
 
 /* Issues grid styles by priorities (provided by Wynn Netherland) */
 /* table.list tr.issue a { color: #484848; } */
-
+/*
 tr.odd.priority-5, table.list tbody tr.odd.priority-5:hover { color: #900; font-weight: bold; }
 tr.odd.priority-5 { background: #ffc4c4; }
 tr.even.priority-5, table.list tbody tr.even.priority-5:hover { color: #900; font-weight: bold; }
@@ -80,6 +80,7 @@ tr.even.priority-1, table.list tbody tr.even.priority-1:hover { color: #559; }
 tr.even.priority-1 { background: #f2faff; }
 tr.priority-1 a { color: #559; }
 tr.odd.priority-1 td, tr.even.priority-1 td { border-color: #add7f3; }
+*/
 
 #watchers a.delete {opacity: 0.7;}
 
