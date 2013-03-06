@@ -137,3 +137,8 @@ div.wiki img {
 .mypage-box {
   color:#222;
 }
+
+/***** attachments *****/
+#content .wiki-page + .attachments {
+  border-top: 1px dashed #ccc;
+}
