@@ -42,6 +42,8 @@ tr.changeset td.committed_on { text-align: center; width: 15%; }
 
 tr.version.closed, tr.version.closed a { color: #666; }
 
+td.parent {white-space: normal; text-align: left;}
+
 /* assinged to me, created by me */
 tr.assigned-to-me td.assigned_to, tr.created-by-me td.author { font-weight: bold; font-size: 11px; }
 
