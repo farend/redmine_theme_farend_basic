@@ -15,129 +15,366 @@
  *
  */
 
-body {font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif; color:#222;}
-
-h1, h2, h3, h4 {font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif;}
-h1 {font-size: 22px;}
-h2, .wiki h1 {font-size: 18px; color: #222;}
-h3, .wiki h2 {font-size: 14px; color: #222;}
-h4, .wiki h3 {font-size: 13px; color: #222;}
-
-#main-menu li a.selected, #main-menu li a.selected:hover {color:#333;}
-
-#sidebar h3{color: #484848;}
-
-/***** Links *****/
-a, a:link, a:visited {color: #0c4d7f;}
-
-a.issue.closed, a.issue.closed:link, a.issue.closed:visited {color: #666;}
-
-a#toggle-completed-versions {color:#666;}
-
-/***** Tables *****/
-table.list th {padding: 4px 2px;}
-
-tr.changeset td.author { text-align: center; width: 15%; }
-tr.changeset td.committed_on { text-align: center; width: 15%; }
-
-tr.version.closed, tr.version.closed a { color: #666; }
-
-td.parent {white-space: normal; text-align: left;}
-
-/* assinged to me, created by me */
-tr.assigned-to-me td.assigned_to, tr.created-by-me td.author { font-weight: bold; font-size: 11px; }
-
-/* overdue */
-tr.odd.overdue { background: #ffd8b2; }
-tr.even.overdue { background: #ffe5cc; }
-tr.odd.overdue td, tr.even.overdue td { border-color: #fcc; }
-
-/* Issues grid styles by priorities (provided by Wynn Netherland) */
-/* table.list tr.issue a { color: #484848; } */
-
-tr.odd.priority-highest, table.list tbody tr.odd.priority-highest:hover { color: #900; font-weight: bold; }
-tr.odd.priority-highest { background: #ffc4c4; }
-tr.even.priority-highest, table.list tbody tr.even.priority-highest:hover { color: #900; font-weight: bold; }
-tr.even.priority-highest { background: #ffd4d4; }
-tr.priority-highest a, tr.priority-highest:hover a { color: #900; }
-tr.odd.priority-highest td, tr.even.priority-highest td { border-color: #ffb4b4; }
-
-tr.odd.priority-high2, table.list tbody tr.odd.priority-high2:hover { color: #900; }
-tr.odd.priority-high2 { background: #ffc4c4; }
-tr.even.priority-high2, table.list tbody tr.even.priority-high2:hover { color: #900; }
-tr.even.priority-high2 { background: #ffd4d4; }
-tr.priority-high2 a { color: #900; }
-tr.odd.priority-high2 td, tr.even.priority-high2 td { border-color: #ffb4b4; }
-
-tr.odd.priority-high3, table.list tbody tr.odd.priority-high3:hover { color: #900; }
-tr.odd.priority-high3 { background: #fee; }
-tr.even.priority-high3, table.list tbody tr.even.priority-high3:hover { color: #900; }
-tr.even.priority-high3 { background: #fff2f2; }
-tr.priority-high3 a { color: #900; }
-tr.odd.priority-high3 td, tr.even.priority-high3 td { border-color: #fcc; }
-
-tr.odd.priority-lowest, table.list tbody tr.odd.priority-lowest:hover { color: #559; }
-tr.odd.priority-lowest { background: #eaf7ff; }
-tr.even.priority-lowest, table.list tbody tr.even.priority-lowest:hover { color: #559; }
-tr.even.priority-lowest { background: #f2faff; }
-tr.priority-lowest a { color: #559; }
-tr.odd.priority-lowest td, tr.even.priority-lowest td { border-color: #add7f3; }
-
-#watchers a.delete {opacity: 0.7;}
-
-.box{ color:#222; }
-
-.contextual { font-size: 12px;}
-
-/* テキストボックスで等幅フォントを使用 */
-input[type="text"] { font-family: "Osaka-Mono", "MS Gothic", sans-serif; font-size: 100%;}
-textarea.wiki-edit {font-family: "Osaka-Mono", "MS Gothic", sans-serif; letter-spacing: normal; line-height: 130%;}
-
-div.issue div.subject p {color: #666;}
-div.issue .next-prev-links {color:#666;}
-
-
-.buttons {font-size: 12px;}
-
-div#activity dt .time { color: #484848; }
-
-div#activity dd span.description, #search-results dd span.description { color: #484848; }
-
-table#time-report tbody tr { color: #484848; }
-
-form .attributes { margin-bottom: 8px; }
-form .attributes p { padding-top: 1px; padding-bottom: 2px; }
-div.wiki-page .contextual a {opacity: 0.7}
-
-ul.projects div.root a.project { font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic"; }
-
-p.other-formats { font-size: 12px; color: #484848; }
-
-/***** Tabs *****/
-#content .tabs ul li a { color: #666; }
-
-#content .tabs ul li a.selected { color: #333 }
-
-/***** Wiki *****/
-div.wiki pre {
-    /* farend_basic: preで横スクロールバーを表示させずに折り返す */
-    width:95%;
-    overflow-x: visible;
-    overflow-y: visible;
-    white-space: -moz-pre-wrap; /* Mozilla */
-    white-space: -pre-wrap;     /* Opera 4-6 */
-    white-space: -o-pre-wrap;   /* Opera 7 */
-    white-space: pre-wrap;      /* CSS3 */
-    word-wrap: break-word;      /* IE 5.5+ */
+body {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif;
+  font-size: 13px;
+  color: #222;
 }
 
-div.wiki img {
-    max-width: 98%;
+h1, h2, h3, h4 {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif
+}
+
+#header h1 {
+  font-size: 22px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
+}
+
+#content h1, h2, h3, h4 {
+  color: #222;
+}
+
+#sidebar h3 {
+  color: #484848
+}
+
+#main-menu li a.selected, #main-menu li a.selected:hover {
+  color: #222;
+  box-shadow: 3px -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/***** Links *****/
+
+a, a:link, a:visited {
+  color: #0c4d7f
+}
+
+a.issue.closed, a.issue.closed:link, a.issue.closed:visited {
+  color: #666
+}
+
+a#toggle-completed-versions {
+  color:#666;
+}
+
+/***** Tables *****/
+
+table.list {
+  font-size: 12px;
+}
+
+table.list th {
+  padding: 4px 2px
+}
+
+table.attributes {
+  font-size: 12px;
+}
+
+table.attributes td {
+  padding: 1px;
+}
+
+tr.changeset td.author {
+  text-align: center;
+  width: 15%;
+}
+
+tr.changeset td.committed_on {
+  text-align: center;
+  width: 15%;
+}
+
+/* assinged to me, created by me */
+
+tr.version.closed, tr.version.closed a {
+  color: #666
+}
+
+tr.assigned-to-me td.assigned_to, tr.created-by-me td.author {
+  font-weight: bold;
+  font-size: 11px;
+}
+
+td.parent {
+  white-space: normal;
+  text-align: left;
+}
+
+/* overdue */
+
+tr.odd.overdue {
+  background: #ffd8b2
+}
+
+tr.even.overdue {
+  background: #ffe5cc
+}
+
+tr.odd.overdue td, tr.even.overdue td {
+  border-color: #fcc
+}
+
+/* Issues grid styles by priorities (provided by Wynn Netherland) */
+
+/* table.list tr.issue a { color: #484848; } _NO__DOTCOMMA__AFTER__*/
+
+tr.odd.priority-highest, table.list tbody tr.odd.priority-highest:hover {
+  color: #900;
+  font-weight: bold;
+}
+
+tr.odd.priority-highest {
+  background: #ffc4c4
+}
+
+tr.even.priority-highest, table.list tbody tr.even.priority-highest:hover {
+  color: #900;
+  font-weight: bold;
+}
+
+tr.odd.priority-highest td, tr.even.priority-highest td {
+  border-color: #ffb4b4
+}
+
+tr.even.priority-highest {
+  background: #ffd4d4
+}
+
+tr.priority-highest a, tr.priority-highest:hover a {
+  color: #900
+}
+
+tr.odd.priority-high2, table.list tbody tr.odd.priority-high2:hover {
+  color: #900
+}
+
+tr.odd.priority-high2 {
+  background: #ffc4c4
+}
+
+tr.even.priority-high2, table.list tbody tr.even.priority-high2:hover {
+  color: #900
+}
+
+tr.odd.priority-high2 td, tr.even.priority-high2 td {
+  border-color: #ffb4b4
+}
+
+tr.even.priority-high2 {
+  background: #ffd4d4
+}
+
+tr.priority-high2 a {
+  color: #900
+}
+
+tr.odd.priority-high3, table.list tbody tr.odd.priority-high3:hover {
+  color: #900
+}
+
+tr.odd.priority-high3 {
+  background: #fee
+}
+
+tr.even.priority-high3, table.list tbody tr.even.priority-high3:hover {
+  color: #900
+}
+
+tr.odd.priority-high3 td, tr.even.priority-high3 td {
+  border-color: #fcc
+}
+
+tr.even.priority-high3 {
+  background: #fff2f2
+}
+
+tr.priority-high3 a {
+  color: #900
+}
+
+tr.odd.priority-lowest, table.list tbody tr.odd.priority-lowest:hover {
+  color: #559
+}
+
+tr.odd.priority-lowest {
+  background: #eaf7ff
+}
+
+tr.even.priority-lowest, table.list tbody tr.even.priority-lowest:hover {
+  color: #559
+}
+
+tr.odd.priority-lowest td, tr.even.priority-lowest td {
+  border-color: #add7f3
+}
+
+tr.even.priority-lowest {
+  background: #f2faff
+}
+
+tr.priority-lowest a {
+  color: #559
+}
+
+/* チケット一覧で終了したチケットは取り消し線付きで表示 */
+tr.closed td.id, tr.closed td.subject {
+  text-decoration: line-through;
+}
+
+#watchers a.delete {
+  opacity: 0.7
+}
+
+.box {
+  color: #222;
+  border-radius: 3px;
+}
+
+.contextual {
+  font-size: 12px
+}
+
+/* submitボタンを押しやすく */
+input[type="submit"] {
+  font-size: 12px;
+}
+
+/* テキストボックスで等幅フォントを使用 */
+
+input[type="text"] {
+  font-family: "Osaka-Mono", "MS Gothic", sans-serif;
+  font-size: 100%;
+}
+
+textarea.wiki-edit {
+  font-size: 14px;
+  font-family: "Osaka-Mono", "MS Gothic", sans-serif;
+  letter-spacing: normal;
+  line-height: 130%;
+}
+
+div.issue {
+  border-radius: 3px;
+}
+
+div.issue div.subject p {
+  color: #666
+}
+
+div.issue .next-prev-links {
+  color:#666;
+}
+
+.buttons {
+  font-size: 12px
+}
+
+div#activity dt .time {
+  color: #484848
+}
+
+div#activity dd span.description, #search-results dd span.description {
+  color: #484848
+}
+
+table#time-report tbody tr {
+  color: #484848
+}
+
+form .attributes {
+  margin-bottom: 8px
+}
+
+form .attributes p {
+  padding-top: 1px;
+  padding-bottom: 2px;
+}
+
+form#issue-form small {
+  font-size: 11px;
+}
+
+div.wiki-page .contextual a {
+  opacity: 0.7
+}
+
+ul.projects div.root a.project {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic"
+}
+
+p.other-formats {
+  font-size: 12px;
+  color: #484848;
+}
+
+/***** Tabs *****/
+
+#content .tabs ul li a {
+  color: #666
+}
+
+#content .tabs ul li a.selected {
+  color: #333
+}
+
+/***** Wiki *****/
+
+div.wiki pre {
+  /* farend_basic: preで横スクロールバーを表示させずに折り返す */;
+  border-radius: 3px;
+  white-space: -moz-pre-wrap; /* Mozilla */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  white-space: pre-wrap; /* CSS3 */
+  word-wrap: break-word; /* IE 5.5+ */
+}
+
+div.wiki p {
+  line-height: 165%;
+}
+
+div.wiki li {
+  margin-bottom: 4px;
 }
 
 /***** My page layout *****/
 .mypage-box {
   color:#222;
+}
+
+#top-menu #loggedas {
+    color: #ccc;
+    float: right;
+    margin-right: 0.5em;
+}
+
+#login-form input#username, #login-form input#password {
+    font-size: 15px;
+    padding: 3px;
+}
+
+/***** flash *****/
+div.flash, .nodata, .warning {
+  border-radius: 3px;
+}
+
+div.attributes[id="attributes"] {
+  border: 1px 0 0 0 0 solid #f00;
+}
+
+/***** calendar *****/
+table.cal div.closed {
+  text-decoration: line-through;
+}
+
+table.cal div.overdue {
+  background: #ffe5cc
+}
+
+table.cal div.assigned-to-me a {
+  font-weight: bold;
 }
 
 /***** attachments *****/
@@ -147,3 +384,132 @@ div.wiki img {
 
 /* http://www.redmine.org/issues/11825 */
 html>body .tabular p {overflow:visible;}
+
+/***** pagination *****/
+p.pagination {
+  font-size: 12px;
+}
+
+p.pagination a:hover {
+  background: #ffffdd;
+}
+
+p.pagination .current {
+  font-weight: bold;
+  background: #d9e4ff;
+}
+
+p.pagination .page {
+  margin-right: 1px;
+  padding: 1px 4px;
+  border: 1px solid #bbb;
+}
+
+p.pagination .previous {
+  margin-right: 1px;
+  padding: 1px 4px;
+  border: 1px solid #bbb;
+  border-radius: 10px 0 0 10px;
+}
+
+p.pagination .next {
+  margin-left: 1px;
+  padding: 1px 4px;
+  border: 1px solid #bbb;
+  border-radius: 0 10px 10px 0;
+}
+
+p.pagination .items {
+  margin-left: 0.3em;
+  margin-right: 0.6em;
+}
+
+span.per-page span {
+  font-weight: bold;
+}
+
+/* サイドバーの幅を狭く */
+#sidebar {
+  width: 20%;
+  font-size: 12px;
+}
+
+#content {
+  width: 77%;
+}
+
+* html #content{
+  width: 77%;
+}
+
+/* 作成日・更新日に実際の日時を表示 */
+a[href*="activity"][title*=":"]:before {
+	content: ' [' attr(title) '] ';
+}
+
+.author {
+  font-size: 12px;
+}
+
+div.projects.box > ul > li > a {
+  font-weight: bold;
+}
+
+/* history */
+#history {
+  padding: 0 1em;
+  margin-bottom: 1em;
+  border-right: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  border-left: 1px solid #d7d7d7;
+  border-radius: 0 0 3px 3px / 0 0 3px 3px;
+}
+
+/* journal */
+div.journal {
+  margin-bottom: 0.5em;
+}
+
+div.journal ul.details {
+  font-size: 12px;
+  color: #444;
+  background: #f6f6f6;
+  border-radius: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-top: 10px;
+}
+
+div.journal ul.details i:before {
+  content: '[';
+  font-style: normal;
+}
+
+div.journal ul.details i:after {
+  content: ']';
+  font-style: normal;
+}
+
+div.journal div.wiki {
+  margin: 0 0 0 30px;
+}
+
+div.journal h4:first-child {
+  font-size: 12px;
+  font-weight: normal;
+  color: #444;
+}
+
+/* news */
+body.controller-news.action-index h3 {
+  margin-bottom: 4px;
+}
+
+body.controller-news.action-index .author {
+  margin-top: 0;
+  border-bottom: 1px dotted #BBBBBB;
+}
+
+body.controller-news.action-index .wiki {
+  margin: 12px 0 20px 30px;
+}
