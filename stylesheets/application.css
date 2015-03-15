@@ -347,6 +347,10 @@ div.wiki li {
   margin-bottom: 4px;
 }
 
+div.wiki img {
+  max-width: 100%;
+}
+
 /***** My page layout *****/
 .mypage-box {
   color:#222;
