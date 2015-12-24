@@ -46,6 +46,10 @@ pre, code {
   color: #484848
 }
 
+#main-menu li a {
+  font-size: 12px;
+}
+
 #main-menu li a.selected, #main-menu li a.selected:hover {
   color: #222;
   box-shadow: 3px -2px 2px rgba(0, 0, 0, 0.1);
