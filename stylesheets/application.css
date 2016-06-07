@@ -350,7 +350,8 @@ div.wiki pre {
 }
 
 div.wiki p {
-  line-height: 165%;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 div.wiki li {
