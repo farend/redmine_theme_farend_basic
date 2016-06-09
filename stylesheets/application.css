@@ -21,10 +21,6 @@ body {
   color: #222;
 }
 
-#header {
-  background: #3862a3;
-}
-
 h1, h2, h3, h4 {
   font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif
 }
@@ -360,10 +356,6 @@ div.wiki li {
 /***** My page layout *****/
 .mypage-box {
   color:#222;
-}
-
-#top-menu {
-  background-color: #2C3957;
 }
 
 #top-menu #loggedas {
