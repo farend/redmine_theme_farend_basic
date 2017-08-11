@@ -228,7 +228,6 @@ tr.priority-lowest a {
 
 .box {
   color: #222;
-  border-radius: 3px;
 }
 
 .contextual {
@@ -266,7 +265,6 @@ textarea.wiki-edit {
 
 div.issue {
   background-color: #ffffe6; /* HSV(60,10,100) */
-  border-radius: 3px;
 }
 
 div.issue div.subject p {
@@ -333,7 +331,6 @@ p.other-formats {
 
 div.wiki pre {
   /* farend_basic: preで横スクロールバーを表示させずに折り返す */;
-  border-radius: 3px;
   white-space: -moz-pre-wrap; /* Mozilla */
   white-space: -pre-wrap; /* Opera 4-6 */
   white-space: -o-pre-wrap; /* Opera 7 */
@@ -361,11 +358,6 @@ div.wiki li {
 #login-form input#username, #login-form input#password {
     font-size: 15px;
     padding: 3px;
-}
-
-/***** flash *****/
-div.flash, .nodata, .warning {
-  border-radius: 3px;
 }
 
 div.attributes[id="attributes"] {
