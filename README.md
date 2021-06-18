@@ -28,7 +28,7 @@ farend basicテーマの主な特徴は以下の通りです。
 Redmineのインストールディレクトリで以下のコマンドを実行してください。
 
 ```
-git clone https://github.com/farend/redmine_theme_farend_basic.git publuc/themes/farend_basic
+git clone https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic
 ```
 
 ### 2: テーマの設定を変更
