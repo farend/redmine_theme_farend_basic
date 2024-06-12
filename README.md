@@ -32,6 +32,14 @@ Redmineのインストールディレクトリで以下のコマンドを実行�
 git clone https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic
 ```
 
+#### RedMica 3.0以降の場合
+
+Redmineのインストールディレクトリで以下のコマンドを実行してください。
+
+```
+git clone -b support-propshaft https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic
+```
+
 ### 2: テーマの設定を変更
 
 Redmineの管理画面で新しいテーマを利用する設定を行います。
