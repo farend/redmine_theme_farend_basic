@@ -14,13 +14,9 @@ Redmine用のカスタムテーマです。日本語環境で見やすい画面�
 * チケット一覧画面において優先度に対応した色分け表示を行うための設定をRedmine標準添付のAlternateテーマから取り込みました
 * チケット一覧画面において期限が超過したチケットをオレンジ色で表示するよう変更しました
 * チケット一覧画面において担当者・作者欄の自分の名前を太字で表示するよう変更しました
-* サイドバーの折り畳み機能を追加しました
 
 
 ## 利用環境
-
-デフォルトテーマを読み込んで必要な部分のみ上書きするようにしているので幅広いバージョンのRedmineで利用できるはずですが、Redmine本体のバージョンアップを行った場合はテーマも最新版に更新してください。
-
 
 ## インストール方法
 
@@ -29,15 +25,15 @@ Redmine用のカスタムテーマです。日本語環境で見やすい画面�
 Redmineのインストールディレクトリで以下のコマンドを実行してください。
 
 ```
-git clone https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic
+git clone https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic
 ```
 
-#### RedMica 3.0以降の場合
+#### Redmine5.1以前の場合
 
 Redmineのインストールディレクトリで以下のコマンドを実行してください。
 
 ```
-git clone -b support-propshaft https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic
+git clone -b redmine5.1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic
 ```
 
 ### 2: テーマの設定を変更
