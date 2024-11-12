@@ -25,7 +25,7 @@ Redmine用のカスタムテーマです。日本語環境で見やすい画面�
 Redmineのインストールディレクトリで以下のコマンドを実行してください。
 
 ```
-git clone https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic
+git clone https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic
 ```
 
 #### Redmine5.1以前の場合
@@ -33,7 +33,7 @@ git clone https://github.com/farend/redmine_theme_farend_basic.git public/themes
 Redmineのインストールディレクトリで以下のコマンドを実行してください。
 
 ```
-git clone -b redmine5.1 https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic
+git clone -b redmine5.1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic
 ```
 
 ### 2: テーマの設定を変更
