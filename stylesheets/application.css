@@ -218,12 +218,12 @@ tr.priority-lowest a {
 /* テキストボックスで等幅フォントを使用 */
 
 input[type="text"] {
-  font-family: "Osaka-Mono", "MS Gothic", sans-serif;
+  font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
 }
 
 textarea.wiki-edit {
   font-size: 0.875rem;
-  font-family: "Osaka-Mono", "MS Gothic", sans-serif;
+  font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace; /* デフォルトを書き換えるだけ。Redmineの個人設定でテキストエリアのフォントをデフォルトから変更している場合はそちらのフォントが優先される */
   letter-spacing: normal;
   line-height: 130%;
 }
