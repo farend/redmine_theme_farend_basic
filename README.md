@@ -31,7 +31,15 @@ Redmineのインストールディレクトリで以下のコマンドを実行�
 git clone https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic
 ```
 
-#### Redmine5.1以前の場合
+#### Redmine 6.0 の場合
+
+Redmineのインストールディレクトリで以下のコマンドを実行してください。
+
+```
+git clone -b redmine6.0 https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic
+```
+
+#### Redmine 5.1 以前の場合
 
 Redmineのインストールディレクトリで以下のコマンドを実行してください。
 
