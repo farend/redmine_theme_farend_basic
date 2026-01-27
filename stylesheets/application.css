@@ -24,6 +24,10 @@ h1, h2, h3, h4 {
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
 }
 
+[dir="rtl"] #header h1 {
+  text-shadow: 1px -1px 1px rgba(0, 0, 0, 0.3);
+}
+
 #content h1, h2, h3, h4 {
   color: var(--oc-gray-9, #212529); /* Initial value is fallbak for Redmine < 7.0 */
 }
@@ -31,6 +35,10 @@ h1, h2, h3, h4 {
 #main-menu li a.selected, #main-menu li a.selected:hover {
   color: var(--oc-gray-9, #212529);
   box-shadow: 3px -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+[dir="rtl"] #main-menu li :is(a.selected, a.selected:hover) {
+  box-shadow: -3px -2px 2px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -47,17 +55,18 @@ a#toggle-completed-versions {
 /***** Tables *****/
 
 table.list th {
-  padding: 4px 2px
+  padding-block: 4px;
+  padding-inline: 2px;
 }
 
 tr.changeset td.author {
   text-align: center;
-  width: 15%;
+  inline-size: 15%;
 }
 
 tr.changeset td.committed_on {
   text-align: center;
-  width: 15%;
+  inline-size: 15%;
 }
 
 /* assinged to me, created by me */
@@ -72,7 +81,7 @@ table.list.issues tr.closed td {
 
 td.parent {
   white-space: normal;
-  text-align: left;
+  text-align: start;
 }
 
 /* overdue */
@@ -197,7 +206,8 @@ tr.priority-lowest a {
 
 .issue .contextual {
   margin: 0;
-  padding: 2px 3px;
+  padding-block: 2px;
+  padding-inline: 3px;
   border-radius: 3px;
   background: rgba(var(--oc-white-rgb, 255, 255, 255), 0.8);
   border: 1px solid var(--oc-gray-4, #ced4da);
@@ -225,12 +235,11 @@ div#activity dd span.description, #search-results dd span.description {
 }
 
 form .attributes {
-  margin-bottom: 8px
+  margin-block-end: 8px
 }
 
 form .attributes p {
-  padding-top: 1px;
-  padding-bottom: 2px;
+  padding-block: 1px 2px;
 }
 
 div.wiki-page .contextual a {
@@ -257,7 +266,7 @@ div.wiki p {
 }
 
 div.wiki li {
-  margin-bottom: 4px;
+  margin-block-end: 4px;
 }
 
 /***** My page layout *****/
@@ -275,7 +284,10 @@ div.wiki li {
 }
 
 div.attributes[id="attributes"] {
-  border: 1px 0 0 0 0 solid #f00;
+  border-block-width: 1px 0;
+  border-inline-width: 0;
+  border-style: solid;
+  border-color: #f00;
 }
 
 /***** calendar *****/
@@ -293,10 +305,12 @@ ul.cal div.assigned-to-me a {
 
 /* 作成日・更新日に実際の日時を表示 */
 a[href*="activity"][data-absolute-date*=":"] {
-  margin: 0 3px;
+  margin-block: 0;
+  margin-inline: 3px;
   box-shadow: inset 0 -1.5em 0 rgba(0, 0, 0, 0.08);
   display: inline-block;
-  padding: 0 3px;
+  padding-block: 0;
+  padding-inline: 3px;
   border-radius: 3px;
 }
 a[href*="activity"][data-absolute-date*=":"]:before {
@@ -312,9 +326,8 @@ div.journal-content ul.journal-details {
   color: var(--oc-gray-7, #495057);
   background: var(--oc-gray-0, #f8f9fa);
   border-radius: 3px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  margin-top: 10px;
+  padding-block: 3px;
+  margin-block-start: 10px;
 }
 
 div.journal-content ul.journal-details i:before {
@@ -329,23 +342,24 @@ div.journal-content ul.journal-details i:after {
 
 /* news */
 body.controller-news.action-index h3 {
-  margin-bottom: 4px;
+  margin-block-end: 4px;
 }
 
 body.controller-news.action-index .author {
-  margin-top: 0;
-  border-bottom: 1px dotted var(--oc-gray-4, #ced4da);
+  margin-block-start: 0;
+  border-block-end: 1px dotted var(--oc-gray-4, #ced4da);
 }
 
 body.controller-news.action-index .wiki {
-  margin: 12px 0 20px 30px;
+  margin-block: 12px 20px;
+  margin-inline: 30px 0;
 }
 
 /* アイコン間のマージンを調整して識別しやすく */
 .contextual .icon, .buttons .icon {
-  margin-left: 5px;
+  margin-inline-start: 5px;
 }
 
 .contextual .icon:first-child, .buttons .icon:first-child {
-  margin-left: 0;
+  margin-inline-start: 0;
 }
