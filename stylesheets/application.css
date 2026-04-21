@@ -28,12 +28,6 @@ h1, h2, h3, h4 {
   color: var(--oc-gray-9, #212529); /* Initial value is fallbak for Redmine < 7.0 */
 }
 
-#main-menu li a.selected, #main-menu li a.selected:hover {
-  color: var(--oc-gray-9, #212529);
-  box-shadow: 3px -2px 2px rgba(0, 0, 0, 0.1);
-}
-
-
 /***** Links *****/
 
 a.issue.closed, a.issue.closed:link, a.issue.closed:visited {
